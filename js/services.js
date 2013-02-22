@@ -6,16 +6,13 @@ var services = angular.module('LeapApp.services', []);
 
 services.factory('MainModel', function ($http, $log, $rootScope, $routeParams, $location) {
 
-
-
     var mainModel = {
-        currentIndex: 1
+        currentIndex:1
     };
 
-    mainModel.panesOffset = function (){
+    mainModel.panesOffset = function () {
         return 'panesOffset' + mainModel.currentIndex;
     }
-
 
 
     return mainModel;
@@ -37,30 +34,26 @@ services.factory('Leap', function ($log, $rootScope) {
         leap = new WebSocket("ws://localhost:6437/");
 
         // On successful connection
-        leap.onopen = function(event) {
+        leap.onopen = function (event) {
             $log.info("Connected to Leap WebSocket!");
         };
 
         // On message received
-        leap.onmessage = function(event) {
+        leap.onmessage = function (event) {
 
-            //if(frameCnt > 2){
-                $rootScope.$broadcast('leapData', $.parseJSON(event.data) );
-             //   frameCnt = 0;
-            //}
+            $rootScope.$broadcast('leapData', $.parseJSON(event.data));
 
-            //frameCnt ++;
 
         };
 
         // On socket close
-        leap.onclose = function(event) {
+        leap.onclose = function (event) {
             leap = null;
             $log.info("WebSocket connection closed");
         }
 
         //On socket error
-        leap.onerror = function(event) {
+        leap.onerror = function (event) {
             alert("Received error");
         };
     }

@@ -24,21 +24,9 @@ controllers.controller('MainCtrl', function ($scope, $rootScope, $timeout, $log,
 
     }
 
-    MainModel.onBtn1 = function(){
-        $log.info('BTN 1');
-        MainModel.currentIndex = 1;
+    MainModel.onThumb = function(idx){
+        MainModel.currentIndex = idx;
     }
-
-    MainModel.onBtn2 = function(){
-        $log.info('BTN 2');
-        MainModel.currentIndex = 2;
-    }
-
-    MainModel.onBtn3 = function(){
-        $log.info('BTN 3');
-        MainModel.currentIndex = 3;
-    }
-
 
 });
 

@@ -1,5 +1,4 @@
 'use strict';
-/* http://docs-next.angularjs.org/api/angular.module.ng.$compileProvider.directive */
 
 var directives = angular.module('LeapApp.directives', []);
 
