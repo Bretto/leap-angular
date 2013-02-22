@@ -1,0 +1,145 @@
+@import "base.scss";
+
+.finger {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  background-color: #2d6987;
+  border: 1px solid #ffffff;
+  opacity: .5;
+  z-index: 9999;
+  @include border-radius(40px);
+  margin-top: -20px;
+  margin-left: -20px;
+  //@include transition-property(all);
+  //@include transition-duration(.2s);
+  //@include transition-timing-function(ease-out);
+
+}
+
+//
+
+.data-vis-wrap {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: inline-block;
+  border: 1px solid rgba(106, 118, 133, .7);
+
+  margin: 20px;
+
+  height: 146px;
+
+  canvas {
+    display: block;
+    background-color: #000000;
+  }
+
+  .leap-planar {
+    float: left;
+    display: inline-block;
+    border-right: 1px solid rgba(106, 118, 133, .7);
+  }
+
+  .leap-graph {
+    float: left;
+    width: 200px;
+  }
+
+}
+
+.menu-wrap {
+  margin-top: 250px;
+  text-align: center;
+
+  .btn-wrap {
+    display: inline-block;
+    .btn {
+      margin: 40px;
+    }
+  }
+}
+
+.gallery {
+
+  overflow: hidden;
+  width: 744px;
+  height: 281px;
+  margin: auto;
+  margin-bottom: 20px;
+
+  @include transition-property(all);
+  @include transition-duration(.3s);
+  @include transition-timing-function(ease-out);
+
+  .panes {
+    @include transition-property(all);
+    @include transition-duration(.3s);
+    @include transition-timing-function(ease-out);
+
+    position: relative;
+    width: 4464px;
+    // 744 * 3;
+
+    img {
+      position: relative;
+      float: left;
+    }
+  }
+
+}
+
+.panesOffset1 {
+  left: 0;
+}
+
+.panesOffset2 {
+  left: -744px;
+}
+
+.panesOffset3 {
+  left: -1488px;
+}
+
+.panesOffset4 {
+  left: -2232px;
+}
+
+.panesOffset5 {
+  left: -2976px;
+}
+
+.panesOffset6 {
+  left: -3720px;
+}
+
+
+.gallery-hot{
+  @include box-shadow(#6a7685 0 0 0 20px);
+}
+
+.thumb-hot{
+  @include box-shadow(#6a7685 0 0 0 10px);
+}
+
+.thumbs{
+
+  display:inline-block;
+
+  .thumbnails{
+    margin: 0;
+
+    .thumbnail{
+      float: left;
+      margin: 8px;
+
+      img{
+        width: 100px;
+      }
+    }
+  }
+}
