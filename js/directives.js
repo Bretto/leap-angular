@@ -1,139 +1,142 @@
 'use strict';
 
 var directives = angular.module('LeapApp.directives', []);
+directives.utils = {};
 
-directives.directive('dpHot', function ($log, $parse, $rootScope, $timeout, MainModel) {
+directives.utils.Locator = function(){
 
-    function link(scope, elem, attr, ctrl) {
-
-        scope.MainModel = MainModel;
-        scope.hasTrigger = false;
-        var css = attr.dpHot;
-        var timeBegan;
-        var elemPos = getPos(elem);
-        $log.info(elemPos);
-
-        $rootScope.$on('leapData', function (e, leapData) {
-
-            if (leapData.pointables && leapData.pointables.length === 1) {
+    var timeBegan;
 
 
-                var leapX = leapData.pointables[0].tipPosition[0];
-                var leapY = leapData.pointables[0].tipPosition[1];
+    var getHypot = function(pointerPos, elemPos){
+        var x = pointerPos.x - elemPos.centerX;
+        var y = pointerPos.y - elemPos.centerY;
+        return  Math.sqrt(x * x + y * y);
+    }
 
-                var pointerPos = {x:(leapX * 5) + window.innerWidth / 2 , y:window.innerHeight - ((leapY * 5) - 700) };
+    var inPerimeter = function(pointerPos, elemPos) {
+        var v = false;
 
+        if((pointerPos.x > elemPos.x && pointerPos.x < elemPos.x + elemPos.w) &&
+            (pointerPos.y > elemPos.y && pointerPos.y < elemPos.y + elemPos.h)){
+            v = true;
+        }
 
-                var x = pointerPos.x - elemPos.centerX;
-                var y = pointerPos.y - elemPos.centerY;
+        return v
+    }
 
-                var hypot = Math.sqrt(x * x + y * y);
-                //$log.info(hypot);
+    this.getIsHot = function(leapData, css, scope, elem){
 
-                if ((hypot < 50 || inPerimeter(pointerPos, elemPos)&& scope.hasTrigger == false)) {
+        timeBegan = (timeBegan) ? timeBegan : leapData.timestamp;
 
-                    timeBegan = (timeBegan) ? timeBegan : leapData.timestamp;
+        var isHot = false;
+        var elemPos = directives.utils.getPos(elem);
 
-                    if (leapData.timestamp - timeBegan > 400000) {
-                        scope.isHot = true;
-                        elem.addClass(css);
-                        scope.$digest();
-                    }
+        if (leapData.pointables && leapData.pointables.length > 0) {
 
-                } else {
-                    timeBegan = undefined;
-                    elem.removeClass(css);
-                    scope.isHot = false;
+            var leapX = leapData.pointables[0].tipPosition[0];
+            var leapY = leapData.pointables[0].tipPosition[1];
+
+            var pointerPos = {x:(leapX * 5) + window.innerWidth / 2 , y:window.innerHeight - ((leapY * 5) - 700) };
+            var hypot = getHypot(pointerPos, elemPos);
+
+            if (hypot < 50 || inPerimeter(pointerPos, elemPos)) {
+
+                if (leapData.timestamp - timeBegan > 400000) {
+                    isHot = true;
+                    elem.addClass(css);
                     scope.$digest();
                 }
+
+            } else {
+                timeBegan = undefined;
+                elem.removeClass(css);
+                isHot = false;
+                scope.$digest();
             }
-        });
-
-        function inPerimeter(pointerPos, elemPos) {
-            var v = false;
-
-            if((pointerPos.x > elemPos.x && pointerPos.x < elemPos.x + elemPos.w) &&
-            (pointerPos.y > elemPos.y && pointerPos.y < elemPos.y + elemPos.h)){
-                v = true;
-            }
-
-            return v
         }
-
-        function getPos(elem) {
-
-            var h = elem.innerHeight();
-            var w = elem.innerWidth();
-            var x = elem.prop('offsetLeft');
-            var y = elem.prop('offsetTop');
-
-
-            return {
-                centerX:x + w/2,
-                centerY:y + h/2,
-                x:x,
-                y:y,
-                w:w,
-                h:h
-
-            };
-        }
+        return isHot;
     }
+
+};
+
+directives.utils.getPos = function(elem) {
+
+    var h = elem.innerHeight();
+    var w = elem.innerWidth();
+    var x = elem.prop('offsetLeft');
+    var y = elem.prop('offsetTop');
 
     return {
-        scope:{},
-        restrict:'A',
-        link:link
-    }
-});
+        centerX:x + w/2,
+        centerY:y + h/2,
+        x:x,
+        y:y,
+        w:w,
+        h:h
+    };
+}
 
-directives.directive('dpShot', function ($log, $parse, $rootScope, $timeout) {
 
-    function link(scope, elem, attr, ctrl) {
+directives.directive('shot', function ($log, $parse, $rootScope, $timeout) {
 
+    function link(scope, elem, attr) {
 
+        var locator = new directives.utils.Locator();
+        var isHot = false;
+        var hasTrigger = false;
+        var css = attr.shot;
+
+        var elemPos = directives.utils.getPos(elem);
+
+        $rootScope.$broadcast('leapRegion', elemPos );
 
         $rootScope.$on('leapData', function (e, leapData) {
 
-            if (scope.isHot) {
+            isHot = (locator.getIsHot(leapData, css, scope, elem) && hasTrigger == false );
+
+            if (isHot) {
                 if (leapData.pointables && leapData.pointables.length === 1) {
                     var pointable = leapData.pointables[0];
 
                     var v = Math.abs(pointable.tipVelocity[1]);
 
-                    if (v > 200 && scope.hasTrigger === false) {
-                        //$log.info('tap');
+                    if (v > 200 && hasTrigger === false) {
                         $(elem).trigger("click");
-                        scope.hasTrigger = true;
+                        hasTrigger = true;
                         $timeout(function () {
-                            scope.hasTrigger = false;
+                            hasTrigger = false;
                         }, 250);
                     }
                 }
             }
-
         });
-
 
     }
 
     return {
-
         restrict:'A',
         link:link
     }
 });
 
 
-directives.directive('dpSlap', function ($log, $parse, $rootScope, $timeout) {
+directives.directive('slap', function ($log, $parse, $rootScope, $timeout) {
 
     function link(scope, elem, attr, ctrl) {
 
         var direction;
+        var locator = new directives.utils.Locator();
+        var isHot = false;
+        var hasTrigger = false;
+        var css = attr.slap;
+        var elemPos = directives.utils.getPos(elem);
 
         $rootScope.$on('leapData', function (e, leapData) {
 
-            if (scope.isHot) {
+            isHot = (locator.getIsHot(leapData, css, scope, elem) && hasTrigger == false );
+
+            if (isHot) {
                 if (leapData.pointables && leapData.pointables.length === 1) {
                     var pointable = leapData.pointables[0];
 
@@ -141,15 +144,15 @@ directives.directive('dpSlap', function ($log, $parse, $rootScope, $timeout) {
                     direction = (v > 0)? 'right' : 'left';
 
 
-                    if (Math.abs(v) > 700 && scope.hasTrigger === false) {
+                    if (Math.abs(v) > 700 && hasTrigger === false) {
                         //$log.info('tap');
                         var event = jQuery.Event("click");
                         event.direction = direction;
 
                         $(elem).trigger(event);
-                        scope.hasTrigger = true;
+                        hasTrigger = true;
                         $timeout(function () {
-                            scope.hasTrigger = false;
+                            hasTrigger = false;
                         }, 300);
                     }
                 }
@@ -167,6 +170,7 @@ directives.directive('dpSlap', function ($log, $parse, $rootScope, $timeout) {
     }
 });
 
+
 directives.directive('pointer', function ($log, $parse, $rootScope, $timeout) {
 
     function link(scope, elem, attr, ctrl) {
@@ -180,7 +184,7 @@ directives.directive('pointer', function ($log, $parse, $rootScope, $timeout) {
         $rootScope.$on('leapData', function (e, leapData) {
 
 
-            if (leapData.pointables && leapData.pointables.length === 1) {
+            if (leapData.pointables && leapData.pointables.length > 0) {
                 var x = leapData.pointables[0].tipPosition[0];
                 var y = leapData.pointables[0].tipPosition[1];
 
@@ -191,12 +195,9 @@ directives.directive('pointer', function ($log, $parse, $rootScope, $timeout) {
             }
 
         });
-
-
     }
 
     return {
-
         restrict:'A',
         link:link
     }
@@ -206,8 +207,6 @@ directives.directive('pointer', function ($log, $parse, $rootScope, $timeout) {
 directives.directive('leapPlanar', function ($log, $parse, $rootScope, $timeout) {
 
     function link(scope, elem, attr, ctrl) {
-
-        $log.info('est');
 
         var canvasPlanar = elem[0];// elem.find("canvas:first")[0];
         var ctxPlanar = canvasPlanar.getContext("2d");
@@ -283,6 +282,9 @@ directives.directive('leapGraph', function ($log, $parse, $rootScope, $timeout) 
 
             if (leapData.pointables && leapData.pointables.length === 1) {
                 var pointable = leapData.pointables[0];
+
+                //if(attr.prop === '1')$log.info(pointable.tipVelocity[ attr.prop ])
+
                 var pos = pointable.tipVelocity[ attr.prop ];
                 ctxPlanar.fillRect(canvasPlanar.width - 1, canvasPlanar.height / 2, 1, 1);
                 ctxPlanar.fillRect(canvasPlanar.width - 1, canvasPlanar.height / 2, 1, -y(pos));
@@ -300,6 +302,80 @@ directives.directive('leapGraph', function ($log, $parse, $rootScope, $timeout) 
         replace:true,
         templateUrl:'templates/leap-graph.html',
         scope:{},
+        restrict:'E',
+        link:link
+    }
+});
+
+directives.directive('leapOverlay', function ($log, $parse, $rootScope, $timeout) {
+
+    var regions = [];
+
+    $rootScope.$on('leapRegion', function (e, elemPos) {
+        $log.info('leapRegion');
+        regions.push(elemPos);
+    });
+
+    function link(scope, elem, attr, ctrl) {
+        var canvas = elem.find("canvas:first")[0];
+        var context = canvas.getContext("2d");
+
+
+        function onWindowResize() {
+            $(canvas).attr({'width':$(window).width(),'height':$(window).height()});
+        }
+
+        window.addEventListener( 'resize', onWindowResize, false );
+        onWindowResize();
+
+
+
+        $rootScope.$on('leapData', function (e, leapData) {
+
+            if (leapData.pointables && leapData.pointables.length > 0) {
+
+                var leapX = leapData.pointables[0].tipPosition[0];
+                var leapY = leapData.pointables[0].tipPosition[1];
+
+                var pointerPos = {x:(leapX * 5) + window.innerWidth / 2 , y:window.innerHeight - ((leapY * 5) - 700) };
+
+                canvas.width = canvas.width;
+                angular.forEach(regions, function (elemPos) {
+
+                    context.beginPath();
+                    context.rect(elemPos.x, elemPos.y, elemPos.w, elemPos.h);
+                    context.lineWidth = 5;
+                    context.strokeStyle = '#FF0220';
+                    context.stroke();
+
+                });
+
+                angular.forEach(regions, function (elemPos) {
+
+                    var x = pointerPos.x - elemPos.centerX;
+                    var y = pointerPos.y - elemPos.centerY;
+
+                    var hypot = Math.sqrt(x * x + y * y);
+
+                    var lw = Math.min(200000/(hypot*hypot), 100);
+
+                    context.beginPath();
+                    context.moveTo(elemPos.centerX, elemPos.centerY);
+                    context.lineTo(pointerPos.x, pointerPos.y);
+                    context.lineWidth = lw;
+                    context.strokeStyle = '#FF0220';
+                    context.lineCap = 'round';
+                    context.stroke();
+                });
+            }
+        });
+
+    }
+
+    return {
+        scope:{},
+        replace:true,
+        templateUrl:'templates/leap-overlay.html',
         restrict:'E',
         link:link
     }

@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <title>Leap</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="stylesheets/screen.css" rel="stylesheet">
 
@@ -14,7 +13,11 @@
 <!--<span class="h-line"></span>-->
 <!--<span class="v-line"></span>-->
 
+<leap-overlay></leap-overlay>
+
 <span pointer class="finger"></span>
+
+
 
 <div class="data-vis-wrap">
     <leap-planar class="leap-planar"></leap-planar>
@@ -26,7 +29,8 @@
 </div>
 
 <div class="menu-wrap">
-    <div class="gallery" dp-hot="gallery-hot" dp-slap ng-click="MainModel.onGallery($event, direction)">
+
+    <div class="gallery" slap="gallery-hot" ng-click="MainModel.onGallery($event, direction)">
         <div class="panes" ng-class="MainModel.panesOffset()">
             <img ng-src="assets/img/hero1.jpg">
             <img ng-src="assets/img/hero2.jpg">
@@ -39,16 +43,23 @@
 
     <div class="thumbs">
         <ul class="thumbnails">
-            <a ng-click="MainModel.onThumb(1)" dp-hot="thumb-hot" dp-shot class="thumbnail"><img ng-src="assets/img/hero1.jpg"></a>
-            <a ng-click="MainModel.onThumb(2)" dp-hot="thumb-hot" dp-shot class="thumbnail"><img ng-src="assets/img/hero2.jpg"></a>
-            <a ng-click="MainModel.onThumb(3)" dp-hot="thumb-hot" dp-shot class="thumbnail"><img ng-src="assets/img/hero3.jpg"></a>
-            <a ng-click="MainModel.onThumb(4)" dp-hot="thumb-hot" dp-shot class="thumbnail"><img ng-src="assets/img/hero4.jpg"></a>
-            <a ng-click="MainModel.onThumb(5)" dp-hot="thumb-hot" dp-shot class="thumbnail"><img ng-src="assets/img/hero5.jpg"></a>
-            <a ng-click="MainModel.onThumb(6)" dp-hot="thumb-hot" dp-shot class="thumbnail"><img ng-src="assets/img/hero6.jpg"></a>
+            <a ng-click="MainModel.onThumb(1)" shot="thumb-hot" class="thumbnail"><img
+                    ng-src="assets/img/hero1.jpg"></a>
+            <a ng-click="MainModel.onThumb(2)" shot="thumb-hot" class="thumbnail"><img
+                    ng-src="assets/img/hero2.jpg"></a>
+            <a ng-click="MainModel.onThumb(3)" shot="thumb-hot"  class="thumbnail"><img
+                    ng-src="assets/img/hero3.jpg"></a>
+            <a ng-click="MainModel.onThumb(4)" shot="thumb-hot" class="thumbnail"><img
+                    ng-src="assets/img/hero4.jpg"></a>
+            <a ng-click="MainModel.onThumb(5)" shot="thumb-hot" class="thumbnail"><img
+                    ng-src="assets/img/hero5.jpg"></a>
+            <a ng-click="MainModel.onThumb(6)" shot="thumb-hot" class="thumbnail"><img
+                    ng-src="assets/img/hero6.jpg"></a>
         </ul>
     </div>
-
 </div>
+
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>

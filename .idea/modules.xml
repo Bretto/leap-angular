@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/leap-test.iml" filepath="$PROJECT_DIR$/.idea/leap-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/leap-angular.iml" filepath="$PROJECT_DIR$/.idea/leap-angular.iml" />
     </modules>
   </component>
 </project>

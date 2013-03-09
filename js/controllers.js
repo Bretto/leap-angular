@@ -6,6 +6,12 @@ var controllers = angular.module('LeapApp.controllers', []);
 controllers.controller('MainCtrl', function ($scope, $rootScope, $timeout, $log, Leap, MainModel){
     $log.info('MainCtrl');
 
+    var trace = console.log.bind(console);
+
+    //trace('testing');
+
+    $scope.helpVisible = true;
+
     $scope.MainModel = MainModel;
 
     MainModel.onGallery = function(e, direction){

@@ -19,6 +19,24 @@
 
 }
 
+#leap-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: 20px;
+
+  canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    pointer-events: none;
+    opacity: .5;
+  }
+
+}
+
 //
 
 .data-vis-wrap {
@@ -83,6 +101,7 @@
 
     position: relative;
     width: 4464px;
+    height: 281px;
     // 744 * 3;
 
     img {
@@ -120,6 +139,7 @@
 
 .gallery-hot{
   @include box-shadow(#6a7685 0 0 0 20px);
+  @include border-radius(4px);
 }
 
 .thumb-hot{
@@ -139,7 +159,9 @@
 
       img{
         width: 100px;
+        height: 38px;
       }
     }
   }
 }
+
