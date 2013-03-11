@@ -10,14 +10,8 @@
 
 <body ng-controller="MainCtrl">
 
-<!--<span class="h-line"></span>-->
-<!--<span class="v-line"></span>-->
 
 <leap-overlay></leap-overlay>
-
-<span pointer class="finger"></span>
-
-
 
 <div class="data-vis-wrap">
     <leap-planar class="leap-planar"></leap-planar>
@@ -30,7 +24,7 @@
 
 <div class="menu-wrap">
 
-    <div class="gallery" slap="gallery-hot" ng-click="MainModel.onGallery($event, direction)">
+    <div class="gallery" leap-swipe="gallery-hot" ng-click="onGallery($event, direction)">
         <div class="panes" ng-class="MainModel.panesOffset()">
             <img ng-src="assets/img/hero1.jpg">
             <img ng-src="assets/img/hero2.jpg">
@@ -42,19 +36,12 @@
     </div>
 
     <div class="thumbs">
-        <ul class="thumbnails">
-            <a ng-click="MainModel.onThumb(1)" shot="thumb-hot" class="thumbnail"><img
-                    ng-src="assets/img/hero1.jpg"></a>
-            <a ng-click="MainModel.onThumb(2)" shot="thumb-hot" class="thumbnail"><img
-                    ng-src="assets/img/hero2.jpg"></a>
-            <a ng-click="MainModel.onThumb(3)" shot="thumb-hot"  class="thumbnail"><img
-                    ng-src="assets/img/hero3.jpg"></a>
-            <a ng-click="MainModel.onThumb(4)" shot="thumb-hot" class="thumbnail"><img
-                    ng-src="assets/img/hero4.jpg"></a>
-            <a ng-click="MainModel.onThumb(5)" shot="thumb-hot" class="thumbnail"><img
-                    ng-src="assets/img/hero5.jpg"></a>
-            <a ng-click="MainModel.onThumb(6)" shot="thumb-hot" class="thumbnail"><img
-                    ng-src="assets/img/hero6.jpg"></a>
+        <ul class="thumbnails" ng-click="onScroll()" leap-scroll>
+            <li ng-repeat="thumb in MainModel.thumbs">
+                <a ng-click="onThumb($index + 1)" leap-click="thumb-hot" class="thumbnail">
+                    <img ng-src="{{thumb.src}}">
+                </a>
+            </li>
         </ul>
     </div>
 </div>
@@ -63,6 +50,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="libs/jquery.scrollTo.js"></script>
 <script src="libs/d3.v3.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
 <script src="js/app.js"></script>

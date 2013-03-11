@@ -49,14 +49,14 @@ html, body {
   margin-left: -20px;
 }
 
-/* line 22, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 #leap-overlay {
   position: absolute;
   top: 0;
   left: 0;
   padding: 20px;
 }
-/* line 29, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 #leap-overlay canvas {
   position: absolute;
   top: 0;
@@ -66,7 +66,7 @@ html, body {
   opacity: .5;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 .data-vis-wrap {
   position: absolute;
   top: 0;
@@ -76,38 +76,38 @@ html, body {
   margin: 20px;
   height: 146px;
 }
-/* line 55, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 .data-vis-wrap canvas {
   display: block;
   background-color: #000000;
 }
-/* line 60, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 .data-vis-wrap .leap-planar {
   float: left;
   display: inline-block;
   border-right: 1px solid rgba(106, 118, 133, 0.7);
 }
-/* line 66, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 .data-vis-wrap .leap-graph {
   float: left;
   width: 200px;
 }
 
-/* line 73, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 .menu-wrap {
   margin-top: 250px;
   text-align: center;
 }
-/* line 77, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 .menu-wrap .btn-wrap {
   display: inline-block;
 }
-/* line 79, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 .menu-wrap .btn-wrap .btn {
   margin: 40px;
 }
 
-/* line 85, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
 .gallery {
   overflow: hidden;
   width: 744px;
@@ -130,7 +130,7 @@ html, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 97, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 .gallery .panes {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -151,43 +151,43 @@ html, body {
   width: 4464px;
   height: 281px;
 }
-/* line 107, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 .gallery .panes img {
   position: relative;
   float: left;
 }
 
-/* line 115, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 .panesOffset1 {
   left: 0;
 }
 
-/* line 119, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 .panesOffset2 {
   left: -744px;
 }
 
-/* line 123, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 .panesOffset3 {
   left: -1488px;
 }
 
-/* line 127, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .panesOffset4 {
   left: -2232px;
 }
 
-/* line 131, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 .panesOffset5 {
   left: -2976px;
 }
 
-/* line 135, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 .panesOffset6 {
   left: -3720px;
 }
 
-/* line 140, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .gallery-hot {
   -webkit-box-shadow: #6a7685 0 0 0 20px;
   -moz-box-shadow: #6a7685 0 0 0 20px;
@@ -199,27 +199,37 @@ html, body {
   border-radius: 4px;
 }
 
-/* line 145, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .thumb-hot {
   -webkit-box-shadow: #6a7685 0 0 0 10px;
   -moz-box-shadow: #6a7685 0 0 0 10px;
   box-shadow: #6a7685 0 0 0 10px;
 }
 
-/* line 149, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 .thumbs {
   display: inline-block;
 }
-/* line 153, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .thumbs .thumbnails {
   margin: 0;
+  width: 400px;
+  overflow: scroll;
+  white-space: nowrap;
+  position: relative;
+  padding: 20px 0;
 }
-/* line 156, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
+.thumbs .thumbnails li {
+  float: none;
+  display: inline-block;
+  margin: 0;
+}
+/* line 163, ../sass/screen.scss */
 .thumbs .thumbnails .thumbnail {
-  float: left;
   margin: 8px;
 }
-/* line 160, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .thumbs .thumbnails .thumbnail img {
   width: 100px;
   height: 38px;

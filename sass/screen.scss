@@ -13,10 +13,6 @@
   @include border-radius(40px);
   margin-top: -20px;
   margin-left: -20px;
-  //@include transition-property(all);
-  //@include transition-duration(.2s);
-  //@include transition-timing-function(ease-out);
-
 }
 
 #leap-overlay{
@@ -152,9 +148,20 @@
 
   .thumbnails{
     margin: 0;
+    width: 400px;
+    overflow: scroll;
+    white-space: nowrap;
+    position: relative;
+    padding: 20px 0;
+
+    li{
+      float: none;
+      display: inline-block;
+      margin: 0;
+    }
 
     .thumbnail{
-      float: left;
+      //float: left;
       margin: 8px;
 
       img{

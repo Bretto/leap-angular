@@ -7,7 +7,15 @@ var services = angular.module('LeapApp.services', []);
 services.factory('MainModel', function ($http, $log, $rootScope, $routeParams, $location) {
 
     var mainModel = {
-        currentIndex:1
+        currentIndex:1,
+        thumbs: [
+            {src:'assets/img/hero1.jpg'},
+            {src:'assets/img/hero2.jpg'},
+            {src:'assets/img/hero3.jpg'},
+            {src:'assets/img/hero4.jpg'},
+            {src:'assets/img/hero5.jpg'},
+            {src:'assets/img/hero6.jpg'}
+        ]
     };
 
     mainModel.panesOffset = function () {
