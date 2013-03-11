@@ -4,8 +4,8 @@
     <list default="true" id="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" name="Default" comment="" />
     <ignored path="leap-test.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/../three-leap/js/directives.js" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362713687703" ignored="false" />
-    <file path="$PROJECT_DIR$/../three-leap/index.html" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362713763286" ignored="false" />
+    <file path="$PROJECT_DIR$/../three-leap/js/directives.js" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362981759261" ignored="false" />
+    <file path="$PROJECT_DIR$/../three-leap/index.html" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362981796832" ignored="false" />
     <file path="$PROJECT_DIR$/../three-leap/sass/base.scss" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362713985312" ignored="false" />
     <file path="$PROJECT_DIR$/../three-leap/js/services.js" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362714058643" ignored="false" />
     <file path="$PROJECT_DIR$/../three-leap/js/controllers.js" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362714106663" ignored="false" />
@@ -15,10 +15,11 @@
     <file path="/directives.js" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362978495507" ignored="false" />
     <file path="/controllers.js" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362974070992" ignored="false" />
     <file path="/help-layer.html" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362790836419" ignored="false" />
-    <file path="/leap-overlay.html" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362977746728" ignored="false" />
+    <file path="/leap-overlay.html" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362979352186" ignored="false" />
     <file path="/utils.js" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362871322054" ignored="false" />
     <file path="/services.js" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362874698393" ignored="false" />
     <file path="/Dummy.txt" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362875404510" ignored="false" />
+    <file path="$PROJECT_DIR$/../three-leap/sass/screen.scss" changelist="32c00ebd-bb2f-4e99-9c28-6a6ff6648e27" time="1362981871019" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +42,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="52" selection-start="523" selection-end="523" vertical-scroll-proportion="-6.25">
+            <state line="13" column="0" selection-start="278" selection-end="307" vertical-scroll-proportion="-1.375">
               <folding />
             </state>
           </provider>
@@ -50,7 +51,7 @@
       <file leaf-file-name="leap-overlay.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/leap-overlay.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="6" selection-start="287" selection-end="287" vertical-scroll-proportion="-5.625">
+            <state line="9" column="6" selection-start="293" selection-end="293" vertical-scroll-proportion="-5.625">
               <folding />
             </state>
           </provider>
@@ -65,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screen.scss" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="screen.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sass/screen.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="20" selection-start="2211" selection-end="2211" vertical-scroll-proportion="0.0">
+            <state line="20" column="1" selection-start="22" selection-end="230" vertical-scroll-proportion="-1.458194">
               <folding />
             </state>
           </provider>
@@ -77,8 +78,10 @@
       <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="44" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="10" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1362978576000" expanded="true" signature="196:1649" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,7 +89,7 @@
       <file leaf-file-name="jquery.scrollTo.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/jquery.scrollTo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="206" column="54" selection-start="8782" selection-end="8782" vertical-scroll-proportion="0.0">
+            <state line="170" column="63" selection-start="7492" selection-end="7492" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -103,19 +106,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="directives.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="directives.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/directives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="0" selection-start="3365" selection-end="3365" vertical-scroll-proportion="0.5504587">
+            <state line="583" column="5" selection-start="17910" selection-end="17910" vertical-scroll-proportion="-31.28">
               <folding>
-                <element signature="e#7235#8350#0" expanded="false" />
-                <element signature="e#8434#10559#0" expanded="false" />
-                <element signature="e#10603#12137#0" expanded="false" />
-                <element signature="e#12182#12573#0" expanded="false" />
-                <element signature="e#12632#12753#0" expanded="false" />
+                <element signature="e#7251#8366#0" expanded="false" />
+                <element signature="e#8450#10575#0" expanded="false" />
+                <element signature="e#12197#12588#0" expanded="false" />
+                <element signature="e#12647#12768#0" expanded="false" />
                 <element signature="n#!!block;n#getOffset#0" expanded="false" />
-                <element signature="e#13071#14551#0" expanded="false" />
-                <element signature="e#14584#17891#0" expanded="false" />
+                <element signature="e#13086#14566#0" expanded="false" />
+                <element signature="e#14599#17906#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -160,11 +162,11 @@
         <option value="$PROJECT_DIR$/js/utils.js" />
         <option value="$PROJECT_DIR$/js/services.js" />
         <option value="$PROJECT_DIR$/js/jquery.scrollTo.js" />
-        <option value="$PROJECT_DIR$/templates/leap-overlay.html" />
-        <option value="$PROJECT_DIR$/sass/screen.scss" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/templates/leap-overlay.html" />
         <option value="$PROJECT_DIR$/js/directives.js" />
+        <option value="$PROJECT_DIR$/sass/screen.scss" />
       </list>
     </option>
   </component>
@@ -409,14 +411,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="32" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#7235#8350#0" expanded="false" />
-            <element signature="e#8434#10559#0" expanded="false" />
-            <element signature="e#10603#12137#0" expanded="false" />
-            <element signature="e#12182#12573#0" expanded="false" />
-            <element signature="e#12632#12753#0" expanded="false" />
+            <element signature="e#7251#8366#0" expanded="false" />
+            <element signature="e#8450#10575#0" expanded="false" />
+            <element signature="e#12197#12588#0" expanded="false" />
+            <element signature="e#12647#12768#0" expanded="false" />
             <element signature="n#!!block;n#getOffset#0" expanded="false" />
-            <element signature="e#13071#14551#0" expanded="false" />
-            <element signature="e#14584#17891#0" expanded="false" />
+            <element signature="e#13086#14566#0" expanded="false" />
+            <element signature="e#14599#17906#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -457,47 +458,19 @@
         <state line="30" column="0" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sass/base.scss">
+    <entry file="file://$PROJECT_DIR$/js/services.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
+        <state line="48" column="30" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/jquery.scrollTo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="54" selection-start="8782" selection-end="8782" vertical-scroll-proportion="0.0">
+        <state line="170" column="63" selection-start="7492" selection-end="7492" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/leap-overlay.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="6" selection-start="287" selection-end="287" vertical-scroll-proportion="-5.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/screen.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="20" selection-start="2211" selection-end="2211" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="44" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="52" selection-start="523" selection-end="523" vertical-scroll-proportion="-6.25">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -508,26 +481,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/services.js">
+    <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="30" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="10" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1362978576000" expanded="true" signature="196:1649" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/directives.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="0" selection-start="3365" selection-end="3365" vertical-scroll-proportion="0.5504587">
+        <state line="583" column="5" selection-start="17910" selection-end="17910" vertical-scroll-proportion="-31.28">
           <folding>
-            <element signature="e#7235#8350#0" expanded="false" />
-            <element signature="e#8434#10559#0" expanded="false" />
-            <element signature="e#10603#12137#0" expanded="false" />
-            <element signature="e#12182#12573#0" expanded="false" />
-            <element signature="e#12632#12753#0" expanded="false" />
+            <element signature="e#7251#8366#0" expanded="false" />
+            <element signature="e#8450#10575#0" expanded="false" />
+            <element signature="e#12197#12588#0" expanded="false" />
+            <element signature="e#12647#12768#0" expanded="false" />
             <element signature="n#!!block;n#getOffset#0" expanded="false" />
-            <element signature="e#13071#14551#0" expanded="false" />
-            <element signature="e#14584#17891#0" expanded="false" />
+            <element signature="e#13086#14566#0" expanded="false" />
+            <element signature="e#14599#17906#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="278" selection-end="307" vertical-scroll-proportion="-1.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/leap-overlay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="6" selection-start="293" selection-end="293" vertical-scroll-proportion="-5.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/screen.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="1" selection-start="22" selection-end="230" vertical-scroll-proportion="-1.458194">
+          <folding />
         </state>
       </provider>
     </entry>

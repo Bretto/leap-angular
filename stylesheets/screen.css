@@ -29,34 +29,14 @@ html, body {
   top: 40%;
 }
 
-/* line 3, ../sass/screen.scss */
-.finger {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 0;
-  left: 0;
-  background-color: #2d6987;
-  border: 1px solid #ffffff;
-  opacity: .5;
-  z-index: 9999;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
-  border-radius: 40px;
-  margin-top: -20px;
-  margin-left: -20px;
-}
-
-/* line 18, ../sass/screen.scss */
+/* line 5, ../sass/screen.scss */
 #leap-overlay {
   position: absolute;
   top: 0;
   left: 0;
   padding: 20px;
 }
-/* line 25, ../sass/screen.scss */
+/* line 12, ../sass/screen.scss */
 #leap-overlay canvas {
   position: absolute;
   top: 0;
@@ -66,7 +46,7 @@ html, body {
   opacity: .5;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 .data-vis-wrap {
   position: absolute;
   top: 0;
@@ -76,38 +56,38 @@ html, body {
   margin: 20px;
   height: 146px;
 }
-/* line 51, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 .data-vis-wrap canvas {
   display: block;
   background-color: #000000;
 }
-/* line 56, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 .data-vis-wrap .leap-planar {
   float: left;
   display: inline-block;
   border-right: 1px solid rgba(106, 118, 133, 0.7);
 }
-/* line 62, ../sass/screen.scss */
+/* line 49, ../sass/screen.scss */
 .data-vis-wrap .leap-graph {
   float: left;
   width: 200px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 .menu-wrap {
   margin-top: 250px;
   text-align: center;
 }
-/* line 73, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 .menu-wrap .btn-wrap {
   display: inline-block;
 }
-/* line 75, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 .menu-wrap .btn-wrap .btn {
   margin: 40px;
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .gallery {
   overflow: hidden;
   width: 744px;
@@ -130,7 +110,7 @@ html, body {
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-/* line 93, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 .gallery .panes {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -151,43 +131,43 @@ html, body {
   width: 4464px;
   height: 281px;
 }
-/* line 103, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 .gallery .panes img {
   position: relative;
   float: left;
 }
 
-/* line 111, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 .panesOffset1 {
   left: 0;
 }
 
-/* line 115, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 .panesOffset2 {
   left: -744px;
 }
 
-/* line 119, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .panesOffset3 {
   left: -1488px;
 }
 
-/* line 123, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .panesOffset4 {
   left: -2232px;
 }
 
-/* line 127, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 .panesOffset5 {
   left: -2976px;
 }
 
-/* line 131, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 .panesOffset6 {
   left: -3720px;
 }
 
-/* line 136, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 .gallery-hot {
   -webkit-box-shadow: #6a7685 0 0 0 20px;
   -moz-box-shadow: #6a7685 0 0 0 20px;
@@ -199,18 +179,18 @@ html, body {
   border-radius: 4px;
 }
 
-/* line 141, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 .thumb-hot {
   -webkit-box-shadow: #6a7685 0 0 0 10px;
   -moz-box-shadow: #6a7685 0 0 0 10px;
   box-shadow: #6a7685 0 0 0 10px;
 }
 
-/* line 145, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 .thumbs {
   display: inline-block;
 }
-/* line 149, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .thumbs .thumbnails {
   margin: 0;
   width: 400px;
@@ -219,17 +199,17 @@ html, body {
   position: relative;
   padding: 20px 0;
 }
-/* line 157, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 .thumbs .thumbnails li {
   float: none;
   display: inline-block;
   margin: 0;
 }
-/* line 163, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .thumbs .thumbnails .thumbnail {
   margin: 8px;
 }
-/* line 167, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 .thumbs .thumbnails .thumbnail img {
   width: 100px;
   height: 38px;

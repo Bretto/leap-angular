@@ -10,7 +10,7 @@ directives.directive('leapClick', function ($log, $parse, $rootScope, $timeout) 
         var locator = new directives.utils.Locator();
         var isHot = false;
         var hasTrigger = false;
-        var css = attr.shot;
+        var css = attr.leapClick;
 
         $rootScope.$broadcast('leapRegion', elem);
 
@@ -52,7 +52,7 @@ directives.directive('leapSwipe', function ($log, $parse, $rootScope, $timeout) 
         var locator = new directives.utils.Locator();
         var isHot = false;
         var hasTrigger = false;
-        var css = attr.slap;
+        var css = attr.leapSwipe;
 
         $rootScope.$broadcast('leapRegion', elem);
 
@@ -100,7 +100,7 @@ directives.directive('leapScroll', function ($log, $parse, $rootScope, $timeout)
         var locator = new directives.utils.Locator();
         var isHot = false;
         var hasTrigger = false;
-        var css = attr.slap;
+        var css = attr.leapScroll;
 
         $rootScope.$broadcast('leapRegion', elem);
 
@@ -379,7 +379,7 @@ directives.utils.Locator = function () {
 
             if (hypot < 50 || inPerimeter(pointerPos, elemPos)) {
 
-                if (leapData.timestamp - timeBegan > 400000) {
+                if (leapData.timestamp - timeBegan > 200000) {
                     isHot = true;
                     elem.addClass(css);
                     scope.$digest();
@@ -394,7 +394,6 @@ directives.utils.Locator = function () {
         }
         return isHot;
     }
-
 };
 
 directives.utils.getPos = function (elem) {
